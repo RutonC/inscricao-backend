@@ -19,10 +19,10 @@ router.patch('/change-password', authController.changePassword);
 
 
 // Participant
-router.get('participants', participantController.listAll);
-router.post('participant', participantController.create);
-router.patch('participant/:id', participantController.update);
-router.delete('participant/:id', participantController.delete);
+router.get('/participants', participantController.listAll);
+router.post('/participant', participantController.create);
+router.patch('/participant/:id', participantController.update);
+router.delete('/participant/:id', participantController.delete);
 
 
 
