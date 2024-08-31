@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "build":"tsup src"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.5.1",
+    "tsup": "^8.2.4",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4"
   },
