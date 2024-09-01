@@ -45,12 +45,12 @@ export default {
     let user
 
     try {
-      user = await prisma.user.findUniqueOrThrow({
-        where:{email:username}
+      user = await prisma.user.findFirstOrThrow({
+        where:{OR:[{email:username}, {username:username}]}
       });
 
       if(!checkIfUnencryptedPasswordIsValid(password, user.password)){
-        return res.status(401).json({message:"Palavra-passa errada!"})
+        return res.status(401).json({message:{error:"Credenciais inválidas. Verifique seu e-mail, nome de usuário ou senha."}})
       }
 
       const token = jwt.sign(
